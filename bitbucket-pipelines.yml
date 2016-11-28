@@ -5,8 +5,11 @@
 # You can specify a custom docker image from Docker Hub as your build environment.
 # image: docker-image:tag
 
+image: maven:3.3.3
+  
 pipelines:
   default:
     - step:
-        script:
-          - echo "Everything is awesome!"
+        script:  # Modify the commands below to build and test your repository.
+          - mvn --version
+          - mvn clean install
